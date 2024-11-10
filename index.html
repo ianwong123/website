@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY5054N9CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YY5054N9CP');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+    <style>
+        /* Global style */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cambria', serif;
+            width: 100%;
+            height: 100%;
+            background-color: #731022;
+
+
+        /* Header */
+        #header {
+            background-color: #262626;
+            color: #fb2c2c;
+            font-size: 36pt;
+            text-align: center;
+            padding: 20px 0;
+            font-style: italic;
+            text-shadow: 2px 2px #000;
+        }
+
+        /* Nav bar */
+        #nav {
+            background-color: #A63429;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			border: 5px solid #262626;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #nav ul li {
+            margin: 0 20px;
+        }
+
+        #nav ul li a {
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+            color: #8FA1A6;
+        }
+
+        #nav ul li a:hover {
+            background-color: #f27141;
+			text-decoration: none;	
+			font-style: italic;
+            color: #8C3048;
+            padding: 5px;
+        }
+
+        /* Main */
+        #content {
+            display: flex;
+            padding: 20px;
+        }
+
+        #book-cover {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        #book-cover img {
+            max-width: 100%;
+            height: 100%;
+			object-fit: cover;
+			
+
+        }
+
+        #text-area {
+            flex: 2;
+            background-color: #f0f0f0;
+			text-align: justify;
+            padding: 20px;
+            overflow-y: auto;
+        }
+		
+		h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            border-bottom: 2px solid #ff6f61;
+            padding-bottom: 10px;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #262626;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 800px) {
+            #content {
+                flex-direction: column;
+            }
+
+            #book-cover {
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header section -->
+    <div id="header">
+        Journal of Data Sciences
+    </div>
+
+    <!-- Navigation bar -->
+    <div id="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="editorialteam.html">Editorial Team</a></li>
+            <li><a href="plagiarism.html">Plagiarism</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+        <!--  Book Cover -->
+        <div id="book-cover">
+            <img src="images/cover2.jpg" alt="Journal of Data Sciences Cover">
+        </div>
+
+        <!-- Text content -->
+        <div id="text-area">
+            <h2>
+				Welcome to the Journal of Data Sciences
+			</h2>
+			<img src="images/rock1.gif" alt="Gif" style="width: 350px; height: 150px; margin-bottom: 10px;">
+
+            <p>
+                The Journal of Data Sciences (JoDS) stands at the forefront of scholarly communication in the dynamic and transformative fields of digital information and big data. As an esteemed international journal, JoDS is committed to the publication of original research articles that explore innovative methodologies, applications, and theoretical advancements within these high-growth sectors. Our objective is to facilitate the exchange of knowledge and inspire new ideas that drive progress in data sciences.
+				<br>
+				<br>
+				JoDS operates under a framework of rigorous academic integrity, adhering to the principles of independent, unbiased, and double-blind peer review. This ensures that every submitted manuscript undergoes a comprehensive evaluation by experts in the field, maintaining the highest standards of quality and scholarship. We believe that this meticulous review process not only upholds the credibility of our journal but also enhances the scholarly rigor of the contributions we publish.
+				<br>
+				<br>
+				The journal is published annually, producing one volume that showcases a curated selection of groundbreaking research. In addition, we accept rolling submissions from authors, which provides a flexible and efficient pathway for researchers to share their findings with the global academic community. This model not only streamlines the publication process but also maximizes the visibility and impact of the research, allowing it to reach a wider audience promptly.
+				<br>
+				<br>
+				The publication language of JoDS is English, enabling us to engage with an international readership comprised of researchers, practitioners, and scholars from diverse backgrounds. We recognize the importance of accessibility in the dissemination of knowledge, and as an open-access journal, we ensure that all published articles are freely available to anyone, anywhere in the world. This commitment to open access fosters collaboration and encourages the global exchange of ideas, ultimately advancing the field of data sciences.
+				<br>
+				<br>
+				We warmly invite researchers and scholars to submit their original articles to the Journal of Data Sciences. By publishing with us, you not only gain access to an esteemed platform that prioritizes academic excellence, but you also contribute to a vibrant community dedicated to the exploration of data science's frontiers. Your research can inspire others, spark new collaborations, and drive innovation in this exciting and ever-evolving field.
+				<br>
+				<br>
+				Join us in our mission to advance the science of data. Submit your article today and become part of a global dialogue that shapes the future of digital information and big data. We look forward to your contributions and to celebrating the diverse and pioneering work that defines the Journal of Data Sciences.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <div id="footer">
+        <p>&copy; 2024 Journal of Data Sciences. All rights reserved.</p>
+    </div>
+</body>
+</html>
