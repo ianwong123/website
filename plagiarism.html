@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY5054N9CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YY5054N9CP');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plagiarism</title>
+
+    <style>
+        /* Global style */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cambria', serif;
+            width: 100%;
+            height: 100%;
+			background-image: url('bg2.png'); 
+			background-size: cover;
+			background-attachment: fixed;
+
+        }
+
+        /* Header */
+        #header {
+            background-color: #262626;
+            color: #fb2c2c;
+            font-size: 36pt;
+            text-align: center;
+            padding: 20px 0;
+            font-style: italic;
+            text-shadow: 2px 2px #000;
+        }
+		
+		#content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}		
+
+        /* Nav bar */
+        #nav {
+            background-color: #A63429;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #262626;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #nav ul li {
+            margin: 0 20px;
+        }
+
+        #nav ul li a {
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+            color: #8FA1A6;
+        }
+
+        #nav ul li a:hover {
+            background-color: #f27141;
+            text-decoration: none;
+            font-style: italic;
+            color: #8C3048;
+            padding: 5px;
+        }
+
+        /*Main*/
+        #content {
+            padding: 20px;
+            display: block;
+            position: relative;
+        }
+
+        /* Image */
+        #book-cover {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #book-cover img {
+            width: 400px;
+            height: 600px;
+			margin-left: 50px;
+			object-fit: cover;
+        }
+
+        /* Text area */
+        #text-area {
+            background-color: #f0f0f0;
+            text-align: justify;
+            padding: 20px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+		
+		h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            border-bottom: 2px solid #ff6f61;
+            padding-bottom: 10px;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #262626;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 800px) {
+            #content {
+                flex-direction: column;
+            }
+
+            #book-cover {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            #book-cover img {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header section -->
+    <div id="header">
+        Journal of Data Sciences
+    </div>
+
+    <!-- Navigation bar -->
+    <div id="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="editorialteam.html">Editorial Team</a></li>
+            <li><a href="plagiarism.html">Plagiarism</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+        <!-- Image at the top-right -->
+        <div id="book-cover">
+            <img src="images/cover2.jpg" alt="Journal of Data Sciences Cover">
+            <img src="images/book4.jpg" alt="Book 4">
+            <img src="images/cover3.jpg" alt="Cover 3">
+        </div>
+
+        <!-- Text area below the image -->
+        <div id="text-area">
+			<h2>Plagiarism</h2>
+            <p>
+				Plagiarism is an act of duplicating or taking other authors’ work, which has been produced and published before, and claiming to be one’s own work. Plagiarism is considered unethical and should be avoided at all costs.                
+				<br><br>
+				The Journal takes plagiarism as a serious violation of publication ethics. We reject any type of plagiarism, in any part of the paper published in our journal. Therefore, all the corresponding authors should make sure the papers submitted is free from plagiarism elements. Submission of a report from a plagiarism checking tool is highly recommended upon submission of the paper.
+				<br><br>
+				JoDS produces one volume annually and accepts rolling submissions from authors. The publication language of the journal is English.
+				<br><br>
+				A non-plagiarism declaration is obligated upon the submission of the final draft. If a paper submitted was found to be plagiarised, it will be rejected by the Editorial Team of the Journal. Even after publication, if there are any disputes on plagiarism or elements of plagiarism are discovered, the paper concerned shall be removed without prior notification to the authors.
+				<br><br>
+				The corresponding author should submit a similarity report together with the paper upon the first submission of the paper. The paper with the similarity of < 20 % will be considered for publication in JoDS. The similarity report should be generated by trusted and licensed software, such as Turnitin and SafeAssign.
+				<br><br>
+				Besides plagiarism, publication misconduct might include citation manipulation, data falsification, fabrication of information, undeclared conflict of interest or any ownership, authorship and patent issues. All the misconduct report should be sent to the Managing Editor for further investigation. For all the cases, JoDS will seek opinion from an independent reviewer.
+				<br><br>
+				JoDS has the right to withdraw / retain the published paper any time after the publication of the paper, without prior notification.
+			</p>
+			
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <div id="footer">
+        <p>&copy; 2024 Journal of Data Sciences. All rights reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY5054N9CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YY5054N9CP');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editorial Team</title>
+    <style>
+        /* Global style */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cambria', serif;
+            width: 100%;
+            height: 100%;
+            background-color: #731022;
+			background: url('images/bg3.png');
+			background-size: cover;
+			background-attachment: fixed;
+			display: flex;
+			flex-direction: column;
+        }
+		
+		
+		#content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}		
+
+		
+        /* Header */
+        #header {
+            background-color: #262626;
+            color: #fb2c2c;
+            font-size: 36pt;
+            text-align: center;
+            padding: 20px 0;
+            font-style: italic;
+            text-shadow: 2px 2px #000;
+        }
+		
+
+        /* Nav bar */
+        #nav {
+            background-color: #A63429;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #262626;
+			padding: 14px
+
+        }
+		
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+		
+        #nav ul li {
+            margin: 0 20px;
+        }
+		
+        #nav ul li a {
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+            color: #8FA1A6;
+        }
+		
+        #nav ul li a:hover {
+            background-color: #f27141;
+            text-decoration: none;
+            font-style: italic;
+            color: #8C3048;
+            padding: 5px;
+        }
+		
+        /* Main*/
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+		
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+		
+        .person img {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border: 2px solid #262626;
+        }
+		
+        .person .name {
+            background-color: #f0f0f0;
+            padding: 5px;
+            text-align: center;
+            width: 200px;
+			margin-bottom: 20px;
+        }
+		
+        .person .title {
+            background-color: none;
+			color: #ffffff;
+            padding: 5px;
+            text-align: justify;
+            width: 200px;
+			height: 120px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+        }
+		
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+		
+        /* Footer */
+        #footer {
+            background-color: #262626;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+		
+		/* Responsive design */
+        @media screen and (max-width: 800px) {
+            .person img {
+                width: 80px;
+                height: 80px;
+            }
+            .person , .person .title {
+                width: 80px;
+				height: 300px;
+            }
+        }
+		
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <div id="header">
+        Journal of Data Sciences
+    </div>
+    <!-- Navigation bar -->
+    <div id="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="editorialteam.html">Editorial Team</a></li>
+            <li><a href="plagiarism.html">Plagiarism</a></li>
+        </ul>
+    </div>
+    <!-- Main content -->
+    <div id="content">
+        <!-- Top person -->
+        <div class="person">
+			<div class="name">Managing Editor</div>
+            <img src="images/img1.png" alt="Person 1">
+            <div class="title">Associate Professor Dr. Deshinta Arrova Dewi, INTI International University, Malaysia</div>
+			<div class="name">Editorial Board</div>
+        </div>
+		
+
+        <!-- Second row -->
+        <div class="row">
+            <div class="person">
+				<img src="images/img2.jpg" alt="Person 2">
+                <div class="title">Associate Professor. Ts. Dr. Angela Lee Siew Hoong, Sunway University, Malaysia</div>
+            </div>
+            <div class="person">
+                <img src="images/img3.png" alt="Person 3">
+                <div class="title">Associate Professor Ts. Dr. Choo Wou Onn, INTI International University, Malaysia</div>
+            </div>
+            <div class="person">
+                <img src="images/img4.png" alt="Person 4">
+                <div class="title">Associate Professor. Dr. Kingshuk Srivastava, University of Petroleum & Energy Studies (UPES), India</div>
+            </div>
+			<div class="person">
+                <img src="images/img5.png" alt="Person 5">
+                <div class="title">Associate Professor Dr. Yeoh Ging Sun, Deakin University, Australia</div>
+            </div>
+			<div class="person">
+                <img src="images/img6.png" alt="Person 6">
+                <div class="title">Associate Professor Dr. Zalisham Jali, University Sains Islam Malaysia, Malaysia</div>
+            </div>
+        </div>
+        <!-- Third row -->
+        <div class="row">
+            <div class="person">
+				<img src="images/img7.png" alt="Person 7">
+                <div class="title">Ts. Dr. Faridah Hani bte Mohamed Salleh, University Tenaga Nasional, Malaysia</div>
+            </div>
+            <div class="person">
+                <img src="images/img8.png" alt="Person 8">
+                <div class="title">Ts. Dr. Rajermani Thinakaran, INTI International University, Malaysia</div>
+            </div>
+            <div class="person">
+                <img src="images/img9.jpg" alt="Person 9">
+                <div class="title">Dr. Dini Oktarina, Taylor’s University, Malaysia</div>
+            </div>
+			<div class="person">
+                <img src="images/img10.jpg" alt="Person 10">
+                <div class="title">Dr. Marwan AlShar’e, Gulf College, Sultanate of Oman</div>
+            </div>
+			<div class="person">
+                <img src="images/img11.png" alt="Person 11">
+                <div class="title">Dr. Mujiono Sadikin, Mercu Buana University, Indonesia</div>
+            </div>
+        </div>
+		<div class="row">
+            <div class="person">
+				<img src="images/img12.png" alt="Person 12">
+                <div class="title">Dr. Rossly Saleh, Pengetua Insitut Kemajuan Pekebun Kecil Perak, Malaysia</div>
+            </div>
+            <div class="person">
+                <img src="images/img13.png" alt="Person 13">
+                <div class="title">Dr. Shabana Habib, Qassim University, Kingdom of Saudi Arabia</div>
+            </div>
+            <div class="person">
+                <img src="images/img14.png" alt="Person 14">
+                <div class="title">Dr Nur Fatin Liyana Mohd Rosely, INTI International University, Malaysia</div>
+            </div>
+				<div class="person">
+                <img src="images/img15.jpg" alt="Person 15">
+                <div class="title">Dr Narinderjit Singh Sawaran Singh, INTI International University, Malaysia</div>
+            </div>
+        </div>
+    </div>
+	
+	
+    <!-- Footer section -->
+    <div id="footer">
+        <p>&copy; 2024 Journal of Data Sciences. All rights reserved.</p>
+    </div>
+</body>
+</html>

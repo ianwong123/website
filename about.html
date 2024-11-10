@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY5054N9CP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YY5054N9CP');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+
+    <style>
+        /* Global style */
+        html, body {
+            margin: 0; 
+            padding: 0;
+            font-family: 'Cambria', serif;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg1.jpg'); 
+			background-attachment: fixed;
+        }
+		
+		#content {
+			flex: 1;	
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}		
+
+        /* Header */
+        #header {
+            background-color: #262626;
+            color: #fb2c2c;
+            font-size: 36pt;
+            text-align: center;
+            padding: 20px 0;
+            font-style: italic;
+            text-shadow: 2px 2px #000;
+        }
+
+        /* Nav bar */
+        #nav {
+            background-color: #A63429;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #262626;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #nav ul li {
+            margin: 0 20px;
+        }
+
+        #nav ul li a {
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: bold;
+            color: #8FA1A6;
+        }
+
+        #nav ul li a:hover {
+            background-color: #f27141;
+            text-decoration: none;
+            font-style: italic;
+            color: #8C3048;
+            padding: 5px;
+        }
+
+        /* Main layout */
+        #content {
+            padding: 20px;
+            display: block;
+            position: relative;
+        }
+
+        /* Image on the center */
+        #book-cover {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #book-cover img {
+			width: 400px;
+            height: 600px;
+			margin-left: 50px;
+			object-fit: cover;
+        }
+
+        /* Text area */
+        #text-area {
+            background-color: #f0f0f0;
+            text-align: justify;
+            padding: 20px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+		
+		h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            border-bottom: 2px solid #ff6f61;
+            padding-bottom: 10px;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #262626;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 800px) {
+            #content {
+                flex-direction: column;
+            }
+
+            #book-cover {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            #book-cover img {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header section -->
+    <div id="header">
+        Journal of Data Sciences
+    </div>
+
+    <!-- Navigation bar -->
+    <div id="nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="editorialteam.html">Editorial Team</a></li>
+            <li><a href="plagiarism.html">Plagiarism</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="content">
+        <!-- Image at the top-right -->
+        <div id="book-cover">
+            <img src="images/cover2.jpg" alt="Journal of Data Sciences Cover">
+            <img src="images/book2.jpg" alt="Book 2">
+            <img src="images/cover4.jpg" alt="Cover 4">
+        </div>
+
+        <!-- Text area below the image -->
+        <div id="text-area">
+
+			<h2>About the Journal</h2>
+			<p>
+				The Journal of Data Sciences (JoDS) is a double-blind peer reviewed journal that provides quarterly publication of articles in areas of digital information and big data and its applications such as economics, business, or the healthcare fields as well as articles for in-depth understanding about relevant technologies, techniques, and analysis tools. The main objective of JoDS is to provide an intellectual platform for international scholars.
+                <br><br>
+                JoDS promotes the introduction of new scientific and applied research and encourages interdisciplinary and transdisciplinary research in data sciences. It is committed to the sharing of knowledge beyond the single-discipline or single-country by offering a meeting space for scholars at large.
+				<br><br>
+				JoDs publishes theoretical and empirical work, systematic reviews, applied research, and services about the following but not limited to Artificial Intelligence, Data Science, Machine Learning, Deep Learning, Data Mining, Predictive Analytics, Optimization, Social Network Analysis, Analytic and Diagnostic informetrics, and so on.				
+				<br><br>
+				Original research papers and state-of-the-art reviews are invited for publications. It also hopes to encourage a culture of writing and publishing among academicians, graduate students, practitioners, and others interested in the related research areas.			</p>
+				The journal is published online.
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <div id="footer">
+        <p>&copy; 2024 Journal of Data Sciences. All rights reserved.</p>
+    </div>
+</body>
+</html>
