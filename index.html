@@ -1,186 +1,286 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <!-- Google Tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY5054N9CP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-YY5054N9CP');
-    </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-
     <style>
-        /* Global style */
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Cambria', serif;
-            width: 100%;
-            height: 100%;
-            background-color: #731022;
-
-
-        /* Header */
-        #header {
-            background-color: #262626;
-            color: #fb2c2c;
-            font-size: 36pt;
-            text-align: center;
-            padding: 20px 0;
-            font-style: italic;
-            text-shadow: 2px 2px #000;
-        }
-
-        /* Nav bar */
-        #nav {
-            background-color: #A63429;
-            height: 50px;
+        body {
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-			border: 5px solid #262626;
-        }
-
-        #nav ul {
-            list-style-type: none;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        #nav ul li {
-            margin: 0 20px;
-        }
-
-        #nav ul li a {
-            text-decoration: underline;
-            font-size: 16px;
-            font-weight: bold;
-            color: #8FA1A6;
-        }
-
-        #nav ul li a:hover {
-            background-color: #f27141;
-			text-decoration: none;	
-			font-style: italic;
-            color: #8C3048;
-            padding: 5px;
-        }
-
-        /* Main */
-        #content {
-            display: flex;
-            padding: 20px;
-        }
-
-        #book-cover {
-            flex: 1;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
             text-align: center;
-            margin-right: 20px;
         }
-
-        #book-cover img {
-            max-width: 100%;
-            height: 100%;
-			object-fit: cover;
-			
-
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
         }
-
-        #text-area {
-            flex: 2;
-            background-color: #f0f0f0;
-			text-align: justify;
-            padding: 20px;
-            overflow-y: auto;
+        .heart {
+            color: #ff4b6e;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: pulse 1s infinite;
         }
-		
-		h2 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-size: 32px;
-            border-bottom: 2px solid #ff6f61;
-            padding-bottom: 10px;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
-
-        /* Footer */
-        #footer {
-            background-color: #262626;
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .options button {
+            background: #ff4b6e;
             color: white;
-            padding: 20px;
-            text-align: center;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 80%;
+            white-space: normal;
+            line-height: 1.4;
         }
-
-        /* Responsive design */
-        @media screen and (max-width: 800px) {
-            #content {
-                flex-direction: column;
-            }
-
-            #book-cover {
-                margin: 0 0 20px 0;
-            }
+        .options button:hover {
+            transform: scale(1.05);
+        }
+        .result {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+            min-height: 50px;
+        }
+        .progress {
+            margin-top: 1rem;
+            color: #888;
+        }
+        .final-message {
+            display: none;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #ff4b6e;
+        }
+        .continue-btn, .play-again-btn {
+            background: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin-top: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .continue-btn:hover, .play-again-btn:hover {
+            transform: scale(1.05);
+        }
+        .emoji {
+            font-size: 1.2em;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header section -->
-    <div id="header">
-        Journal of Data Sciences
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="question"></div>
+        <div class="options"></div>
+        <div class="result"></div>
+        <div class="progress"></div>
+        <div class="final-message"></div>
     </div>
 
-    <!-- Navigation bar -->
-    <div id="nav">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="editorialteam.html">Editorial Team</a></li>
-            <li><a href="plagiarism.html">Plagiarism</a></li>
-        </ul>
-    </div>
+    <script>
+        const questions = [
+            {
+                question: "If I were an animal, what would I be?",
+                options: [
+                    "🐕 A loyal dog",
+                    "🐉 A majestic dragon",
+                    "🐢 A slow but wise turtle",
+                    "🐒 A cheeky monkey"
+                ],
+                responses: [
+                    "So you're saying I'll wait for you outside the train station like Hachiko? Bruh.",
+                    "Ah yes, flying, breathing fire, and hoarding treasure… just like my bank account: always empty.",
+                    "I feel like you're calling me lazy but trying to make it sound deep.",
+                    "Are you saying I belong in the zoo or what???"
+                ]
+            },
+            {
+                question: "If I was an NPC in a video game, what would my dialogue be?",
+                options: [
+                    "🛑 'You're not strong enough to pass this area.'",
+                    "💬 'I have nothing more to say to you.'",
+                    "🎁 'Bring me 100 rare items for a 0.5% reward.'",
+                    "😶 'Press [F] to pay respects.'"
+                ],
+                responses: [
+                    "So I'm basically a human error message. Great.",
+                    "Wow, I'm that one NPC that just stares at you awkwardly after 1 line of dialogue.",
+                    "Ah yes, classic scam quest-giver behavior.",
+                    "My whole existence is just a meme. I accept this."
+                ]
+            },
+            {
+                question: "If I had to survive a zombie apocalypse, what would be my strategy?",
+                options: [
+                    "🔫 Go full action movie mode, guns blazing!",
+                    "🚗 Steal a car and drive to the mountains!",
+                    "🧠 Use 900 IQ strategies to outsmart zombies.",
+                    "🏃 Just run and hope for the best."
+                ],
+                responses: [
+                    "Until I run out of bullets and become zombie sushi.",
+                    "Bold of you to assume I can afford gas in this economy.",
+                    "Nice idea, but I forgot where I put my phone 5 minutes ago.",
+                    "So basically cardio training with extra motivation."
+                ]
+            },
+            {
+                question: "What's my biggest red flag?",
+                options: [
+                    "📱 Never replies fast but always online.",
+                    "🍕 Eats the last piece of food without asking.",
+                    "🛏️ Can sleep 14 hours straight without a problem.",
+                    "😂 Sends memes instead of serious replies."
+                ],
+                responses: [
+                    "I was gonna reply… but then I didn't.",
+                    "Survival of the fittest. No regrets.",
+                    "It's called energy conservation. I'm a genius.",
+                    "Communication is key, and my key is memes."
+                ]
+            },
+            {
+                question: "If we were stuck on a deserted island, what's my role?",
+                options: [
+                    "🔥 The fire starter – keeps us warm but might burn everything down.",
+                    "🐟 The fisherman – tries to get food but fails 90% of the time.",
+                    "🌴 The shelter builder – makes a house out of leaves and hopes it doesn't collapse.",
+                    "🛶 The escape planner – builds a raft that sinks immediately."
+                ],
+                responses: [
+                    "If you see me with two sticks, just know I'm about to risk our survival.",
+                    "Congrats, we're having imaginary sushi again.",
+                    "It's not a 5-star hotel, but it's 5 stars in my heart.",
+                    "At least I tried. Now we just float and hope for the best."
+                ]
+            }
+        ];
 
-    <!-- Main content -->
-    <div id="content">
-        <!--  Book Cover -->
-        <div id="book-cover">
-            <img src="images/cover2.jpg" alt="Journal of Data Sciences Cover">
-        </div>
+        let currentQuestion = 0;
+        let selectedAnswer = null;
 
-        <!-- Text content -->
-        <div id="text-area">
-            <h2>
-				Welcome to the Journal of Data Sciences
-			</h2>
-			<img src="images/rock1.gif" alt="Gif" style="width: 350px; height: 150px; margin-bottom: 10px;">
+        function displayQuestion() {
+            const questionDiv = document.querySelector('.question');
+            const optionsDiv = document.querySelector('.options');
+            const progressDiv = document.querySelector('.progress');
+            const resultDiv = document.querySelector('.result');
+            
+            resultDiv.textContent = '';
+            
+            if (currentQuestion < questions.length) {
+                const question = questions[currentQuestion];
+                questionDiv.textContent = question.question;
+                
+                optionsDiv.innerHTML = '';
+                question.options.forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.innerHTML = option;
+                    button.onclick = () => selectAnswer(index);
+                    optionsDiv.appendChild(button);
+                });
+                
+                progressDiv.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            } else {
+                showFinalMessage();
+            }
+        }
 
-            <p>
-                The Journal of Data Sciences (JoDS) stands at the forefront of scholarly communication in the dynamic and transformative fields of digital information and big data. As an esteemed international journal, JoDS is committed to the publication of original research articles that explore innovative methodologies, applications, and theoretical advancements within these high-growth sectors. Our objective is to facilitate the exchange of knowledge and inspire new ideas that drive progress in data sciences.
-				<br>
-				<br>
-				JoDS operates under a framework of rigorous academic integrity, adhering to the principles of independent, unbiased, and double-blind peer review. This ensures that every submitted manuscript undergoes a comprehensive evaluation by experts in the field, maintaining the highest standards of quality and scholarship. We believe that this meticulous review process not only upholds the credibility of our journal but also enhances the scholarly rigor of the contributions we publish.
-				<br>
-				<br>
-				The journal is published annually, producing one volume that showcases a curated selection of groundbreaking research. In addition, we accept rolling submissions from authors, which provides a flexible and efficient pathway for researchers to share their findings with the global academic community. This model not only streamlines the publication process but also maximizes the visibility and impact of the research, allowing it to reach a wider audience promptly.
-				<br>
-				<br>
-				The publication language of JoDS is English, enabling us to engage with an international readership comprised of researchers, practitioners, and scholars from diverse backgrounds. We recognize the importance of accessibility in the dissemination of knowledge, and as an open-access journal, we ensure that all published articles are freely available to anyone, anywhere in the world. This commitment to open access fosters collaboration and encourages the global exchange of ideas, ultimately advancing the field of data sciences.
-				<br>
-				<br>
-				We warmly invite researchers and scholars to submit their original articles to the Journal of Data Sciences. By publishing with us, you not only gain access to an esteemed platform that prioritizes academic excellence, but you also contribute to a vibrant community dedicated to the exploration of data science's frontiers. Your research can inspire others, spark new collaborations, and drive innovation in this exciting and ever-evolving field.
-				<br>
-				<br>
-				Join us in our mission to advance the science of data. Submit your article today and become part of a global dialogue that shapes the future of digital information and big data. We look forward to your contributions and to celebrating the diverse and pioneering work that defines the Journal of Data Sciences.
-            </p>
-        </div>
-    </div>
+        function selectAnswer(index) {
+            const resultDiv = document.querySelector('.result');
+            const optionsDiv = document.querySelector('.options');
+            const question = questions[currentQuestion];
+            
+            // Remove any existing continue button
+            const existingContinueBtn = document.querySelector('.continue-btn');
+            if (existingContinueBtn) {
+                existingContinueBtn.remove();
+            }
+            
+            // Disable all option buttons
+            const buttons = optionsDiv.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.opacity = '0.6';
+                button.disabled = true;
+            });
+            
+            // Highlight selected answer
+            buttons[index].style.opacity = '1';
+            buttons[index].style.background = '#ff6b8e';
+            
+            resultDiv.textContent = question.responses[index];
+            
+            // Add continue button
+            const continueBtn = document.createElement('button');
+            continueBtn.textContent = 'Continue';
+            continueBtn.className = 'continue-btn';
+            continueBtn.onclick = () => {
+                currentQuestion++;
+                displayQuestion();
+            };
+            resultDiv.appendChild(document.createElement('br'));
+            resultDiv.appendChild(continueBtn);
+        }
 
-    <!-- Footer section -->
-    <div id="footer">
-        <p>&copy; 2024 Journal of Data Sciences. All rights reserved.</p>
-    </div>
+        function showFinalMessage() {
+            const container = document.querySelector('.container');
+            const questionDiv = document.querySelector('.question');
+            const optionsDiv = document.querySelector('.options');
+            const progressDiv = document.querySelector('.progress');
+            const resultDiv = document.querySelector('.result');
+            const finalMessageDiv = document.querySelector('.final-message');
+            
+            questionDiv.style.display = 'none';
+            optionsDiv.style.display = 'none';
+            progressDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            
+            finalMessageDiv.style.display = 'block';
+            finalMessageDiv.innerHTML = `
+                <h2>Happy Valentine's Day! ❤️</h2>
+                <p>Thanks for playing! You've made this game, and my day, special.</p>
+                <p>Now, how about a real-life date? 😊</p>
+                <p>Just let me check my teleportation spell real quick… oh wait, still on cooldown for 1,247 years 😭.</p>
+                <p style="font-size: 2rem">🌹💝</p>
+            `;
+            
+            // Add play again button
+            const playAgainBtn = document.createElement('button');
+            playAgainBtn.textContent = 'Play Again';
+            playAgainBtn.className = 'play-again-btn';
+            playAgainBtn.onclick = () => {
+                currentQuestion = 0;
+                finalMessageDiv.style.display = 'none';
+                questionDiv.style.display = 'block';
+                optionsDiv.style.display = 'block';
+                progressDiv.style.display = 'block';
+                resultDiv.style.display = 'block';
+                displayQuestion();
+            };
+            finalMessageDiv.appendChild(playAgainBtn);
+        }
+
+        // Start the game
+        displayQuestion();
+    </script>
 </body>
 </html>
